@@ -198,7 +198,12 @@ NSString * const kTrackEventVideoComplete = @"Video Complete";
     [self showControls];
     
     NSString *vidID = videoID ?: @"";
-    _currentVideoInfo = @{ @"title": title ?: @"", @"videoID": vidID, @"isStreaming": @(streaming), @"shareURL": shareURL ?: url};
+    _currentVideoInfo = [NSMutableDictionary dictionaryWithCapacity:4];
+    [_currentVideoInfo setValue:title ?: @"" forKey:@"title"];
+    [_currentVideoInfo setValue:title forKey:@"videoID"];
+    [_currentVideoInfo setValue:@(streaming) forKey:@"isStreaming"];
+    [_currentVideoInfo setValue:shareURL ?: url forKey:@"shareURL"];
+//    _currentVideoInfo = @{ @"title": title ?: @"", @"videoID": vidID, @"isStreaming": @(streaming), @"shareURL": shareURL ?: url};
     
     [[NSNotificationCenter defaultCenter] postNotificationName:kVideoPlayerVideoChangedNotification
                                                         object:self
