@@ -147,9 +147,9 @@ NSString * const kTrackEventVideoComplete = @"Video Complete";
     playerTouchedGesture.delegate = self;
     [_videoPlayerView addGestureRecognizer:playerTouchedGesture];
     
-    UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
-    [pinchRecognizer setDelegate:self];
-    [self.view addGestureRecognizer:pinchRecognizer];
+//    UIPinchGestureRecognizer *pinchRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchGesture:)];
+//    [pinchRecognizer setDelegate:self];
+//    [self.view addGestureRecognizer:pinchRecognizer];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
