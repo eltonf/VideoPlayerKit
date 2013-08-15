@@ -129,11 +129,7 @@
     
     UIImage *shareImage = [UIImage imageNamed:@"share-button"];
     
-    if (!_fullscreen) {
-        _titleLabel.hidden = YES;
-        _shareButton.hidden = YES;
-        _fullScreenButton.hidden = YES;
-        
+    if (!_fullscreen) {        
         CGSize twoLineSize = [@"M\nM" sizeWithFont:[_titleLabel font]
                                  constrainedToSize:CGSizeMake(insetBounds.size.width, CGFLOAT_MAX)
                                      lineBreakMode:UILineBreakModeWordWrap];
@@ -152,11 +148,7 @@
         [_airplayIsActiveView setFrame:playerFrame];
 
         [_shareButton setFrame:CGRectMake(insetBounds.size.width - shareImage.size.width, insetBounds.origin.y, shareImage.size.width, shareImage.size.height)];
-    } else {
-        _titleLabel.hidden = NO;
-        _shareButton.hidden = NO;
-        _fullScreenButton.hidden = YES;
-        
+    } else {        
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
         [_titleLabel setFrame:CGRectMake(insetBounds.origin.x + self.padding,
