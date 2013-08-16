@@ -247,6 +247,27 @@ NSString * const kTrackEventVideoComplete = @"Video Complete";
     [alertView show];
 }
 
+- (void)play
+{
+    if (![self isPlaying])
+    {
+        [self playVideo];
+        [[_videoPlayerView activityIndicator] stopAnimating];
+        [self syncPlayPauseButtons];
+        [self showControls];
+    }
+}
+
+- (void)pause
+{
+    if ([self isPlaying])
+    {
+        [_videoPlayer pause];
+        [self syncPlayPauseButtons];
+        [self showControls];
+    }
+}
+
 - (void)playPauseHandler
 {
     if (_seekToZeroBeforePlay) {
